@@ -11,7 +11,11 @@ export default function Navbar() {
       <div className="flex space-x-4">
         <Link href="/" className="hover:underline">Home</Link>
         {isSignedIn && (
+            <>
           <Link href="/chat" className="hover:underline">Chat</Link>
+          <Link href="/chat2" className="hover:underline">Chat2</Link>
+          </>
+
         )}
       </div>
       <div className="flex items-center space-x-4">

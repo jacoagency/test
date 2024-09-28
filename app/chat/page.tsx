@@ -50,6 +50,17 @@ export default function ChatPage() {
 
       if (response.ok) {
         console.log('Webhook sent successfully')
+
+        const responseText = await response.text(); // Handle plain text response
+
+        // Simulate a response from the AI or webhook
+        const aiResponse: Message = {
+          id: Date.now(),
+          text: responseText || "This is a response from Make.com webhook.",
+          sender: 'other'
+        }
+        setMessages(prevMessages => [...prevMessages, aiResponse])
+
       } else {
         console.error('Failed to send webhook')
       }
